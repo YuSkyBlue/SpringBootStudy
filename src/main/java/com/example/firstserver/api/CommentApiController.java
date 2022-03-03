@@ -1,5 +1,6 @@
 package com.example.firstserver.api;
 
+import com.example.firstserver.annotation.RunningTime;
 import com.example.firstserver.dto.CommentDto;
 import com.example.firstserver.entity.Comment;
 import com.example.firstserver.service.CommentService;
@@ -42,6 +43,7 @@ public class CommentApiController {
         //결과 응답
         return ResponseEntity.status(HttpStatus.OK).body(updatedDto);
     }
+    @RunningTime
     @DeleteMapping("/api/comments/{id}")
     public ResponseEntity<CommentDto> delete(@PathVariable Long id) {
         //서비스에게 위임
